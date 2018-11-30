@@ -26,8 +26,7 @@ fi
 echo -e "Building for a branch push - building and deploying."
 
 # Run the webpack build
-npm run docs
-NODE_ENV=production npm run build:browser
+NODE_ENV=production yarn build:browser
 
 REPO=$(git config remote.origin.url)
 SHA=$(git rev-parse --verify HEAD)

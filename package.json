@@ -4,7 +4,7 @@
   "description": "Browser videogame built with gulp, browserify, and phaser.js",
   "main": "./src/js/main.js",
   "scripts": {
-    "build:browser": "webpack",
+    "build:browser": "npx webpack --config webpack.config.js",
     "test": "eslint src",
     "lint": "eslint src --fix"
   },
