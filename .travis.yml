@@ -6,6 +6,8 @@ jobs:
   include:
     - stage: test
       script: yarn test
+    - stage: deploy
+      script: bash ./travis-deploy.sh
 cache:
   yarn: true
   directories:
