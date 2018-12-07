@@ -8,7 +8,7 @@ const BootScene = {
 		this.game.load.image('preloader_bar', 'images/preloader_bar.png');
 	},
 
-	create: function create() {
+	create() {
 		this.game.state.start('preloader');
 	}
 };
