@@ -26,7 +26,7 @@ export class Item {
 	public toJSON(): IItemSerialized {
 		return {
 			name: this.name,
-			type: this.type
+			type: this.constructor.name
 		};
 	}
 
@@ -34,7 +34,7 @@ export class Item {
 
 }
 
-Item.factory.set('item', Item);
+Item.factory.add(Item);
 
 /**
  * The serialized item data

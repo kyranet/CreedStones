@@ -1,4 +1,4 @@
-import { IItemSerialized, Item } from '../../items/Item';
+import { IItemSerialized, Item } from '../items/Item';
 
 export class Inventory extends Map<string, Item> {
 

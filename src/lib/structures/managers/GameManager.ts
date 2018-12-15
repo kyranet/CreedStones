@@ -1,6 +1,6 @@
 import { Game } from 'phaser';
-import { GameObject } from '../common/GameObject';
 import { Player } from '../gameObjects/characters/Player';
+import { GameObject } from '../gameObjects/GameObject';
 import { MapManager } from './MapManager';
 
 export class GameManager {

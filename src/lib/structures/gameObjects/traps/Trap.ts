@@ -1,5 +1,5 @@
-import { GameObject } from '../../common/GameObject';
 import { Character } from '../characters/Character';
+import { GameObject } from '../GameObject';
 
 export class Trap extends GameObject {
 
@@ -28,3 +28,5 @@ export class Trap extends GameObject {
 	}
 
 }
+
+Trap.factory.add(Trap);

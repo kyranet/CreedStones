@@ -1,9 +1,9 @@
-import { Item } from '../../../items/Item';
-import { ItemWeapon } from '../../../items/ItemWeapon';
-import { GameObject, IGameObjectSerialized } from '../../common/GameObject';
 import { IInventorySerialized, Inventory } from '../../common/Inventory';
 import { CharacterState, Direction } from '../../common/types';
+import { Item } from '../../items/Item';
+import { ItemWeapon } from '../../items/ItemWeapon';
 import { GameManager } from '../../managers/GameManager';
+import { GameObject, IGameObjectSerialized } from '../GameObject';
 
 export class Character extends GameObject {
 	public walkSpeed = 0;
@@ -115,6 +115,8 @@ export class Character extends GameObject {
 	}
 
 }
+
+Character.factory.add(Character);
 
 /**
  * The serialized character data

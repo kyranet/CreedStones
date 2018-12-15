@@ -1,6 +1,6 @@
-import { GameObject, IGameObjectSerialized } from '../../common/GameObject';
 import { HidingType } from '../../common/types';
 import { GameManager } from '../../managers/GameManager';
+import { GameObject, IGameObjectSerialized } from '../GameObject';
 
 export class HidingSpot extends GameObject {
 
@@ -30,6 +30,8 @@ export class HidingSpot extends GameObject {
 	}
 
 }
+
+HidingSpot.factory.add(HidingSpot);
 
 /**
  * The serialized hiding spot data

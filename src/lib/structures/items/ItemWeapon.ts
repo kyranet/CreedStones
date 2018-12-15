@@ -2,8 +2,6 @@ import { Game } from 'phaser';
 import { IItemSerialized, Item } from './Item';
 
 export class ItemWeapon extends Item {
-
-	public type = 'weapon';
 	public damage = 0;
 
 	public constructor(public game: Game, public name: string) {
@@ -32,7 +30,7 @@ export class ItemWeapon extends Item {
 
 }
 
-Item.factory.set('weapon', ItemWeapon);
+Item.factory.add(ItemWeapon);
 
 /**
  * The serialized item weapon data

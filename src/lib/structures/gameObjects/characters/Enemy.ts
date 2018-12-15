@@ -51,6 +51,8 @@ export class Enemy extends Character {
 
 }
 
+Enemy.factory.add(Enemy);
+
 /**
  * The serialized enemy data
  */

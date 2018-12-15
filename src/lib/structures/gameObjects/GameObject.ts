@@ -1,5 +1,6 @@
 import { Sprite } from 'phaser';
 import { GameManager } from '../managers/GameManager';
+import { GameObjectFactory } from './GameObjectFactory';
 
 export class GameObject extends Sprite {
 
@@ -59,6 +60,7 @@ export class GameObject extends Sprite {
 				x: this.position.x,
 				y: this.position.y
 			},
+			type: this.constructor.name,
 			velocity: {
 				x: this.body.velocity.x,
 				y: this.body.velocity.y
@@ -75,7 +77,11 @@ export class GameObject extends Sprite {
 			.setVelocity(data.velocity.x, data.velocity.y);
 	}
 
+	public static factory = new GameObjectFactory();
+
 }
+
+GameObject.factory.add(GameObject);
 
 /**
  * The serialized game object data
@@ -88,6 +94,7 @@ export interface IGameObjectSerialized {
 		x: number;
 		y: number;
 	};
+	type: string;
 	velocity: {
 		x: number;
 		y: number;
