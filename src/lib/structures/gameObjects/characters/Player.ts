@@ -1,5 +1,5 @@
 import { GameManager } from '../../managers/GameManager';
-import { HidingType, PlayerState } from '../../misc/types';
+import { Direction, HidingType, PlayerState } from '../../misc/types';
 import { HidingSpot, IHidingSpotSerialized } from '../hidingSpots/HidingSpot';
 import { Character, ICharacterSerialized } from './Character';
 
@@ -7,9 +7,34 @@ export class Player extends Character {
 
 	public hidingSpot: HidingSpot = null;
 	public money = 0;
+	private directions = {
+		down: false,
+		left: false,
+		right: false,
+		up: false
+	};
 
 	public constructor(gameManager: GameManager, x: number, y: number) {
 		super(gameManager, x, y, 'player');
+		this.game.camera.follow(this);
+	}
+
+	public update() {
+		this.directions.down = this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN);
+		this.directions.left = this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT);
+		this.directions.right = this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT);
+		this.directions.up = this.game.input.keyboard.isDown(Phaser.Keyboard.UP);
+		const running = this.game.input.keyboard.isDown(Phaser.Keyboard.SHIFT);
+
+		if (this.directions.down !== this.directions.up) {
+			this.direction = this.directions.down ? Direction.down : Direction.up;
+			running ? this.run() : this.walk();
+		} else if (this.directions.left !== this.directions.right) {
+			this.direction = this.directions.left ? Direction.left : Direction.right;
+			running ? this.run() : this.walk();
+		} else {
+			this.stand();
+		}
 	}
 
 	/**
