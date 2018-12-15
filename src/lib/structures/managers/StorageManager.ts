@@ -10,6 +10,7 @@ export class StorageManager {
 		localStorage.clear();
 		localStorage.setItem('gameObjects', JSON.stringify(this.gameManager.gameObjects));
 		localStorage.setItem('level', this.gameManager.level.toString());
+		localStorage.setItem('playerName', this.gameManager.playerName);
 	}
 
 	public load() {
@@ -33,6 +34,9 @@ export class StorageManager {
 
 			this.gameManager.player = this.gameManager.gameObjects.find((gameObject) => gameObject instanceof Player) as Player;
 		}
+
+		const playerName = localStorage.getItem('playerName');
+		if (playerName) this.gameManager.playerName = playerName;
 	}
 
 }

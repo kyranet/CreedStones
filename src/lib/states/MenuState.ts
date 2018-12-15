@@ -12,7 +12,7 @@ export class MenuState extends Phaser.State {
 		this.logo.scale.setTo(0.5, 0.5);
 
 		this.createButton('New Game', () => {
-			this.game.state.start('play');
+			this.game.state.start('newGame');
 		});
 		if (localStorage.getItem('level')) this.createButton('Continue', () => {
 			(this.game.state.states.play as PlayState).gameManager.storageManager.load();

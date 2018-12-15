@@ -8,9 +8,10 @@ export class GameManager {
 	public storageManager = new StorageManager(this);
 	public gameObjects: GameObject[] = [];
 	public player: Player = null;
+	public playerName: string = null;
 	public level = GameLevels.First;
 
-	public constructor(public game: Phaser.Game) {}
+	public constructor(public game: Phaser.Game) { }
 
 	public clear() {
 		for (const gameObject of this.gameObjects) gameObject.destroy(true);

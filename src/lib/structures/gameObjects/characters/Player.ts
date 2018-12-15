@@ -62,6 +62,7 @@ export class Player extends Character {
 
 	public fromJSON(data: IPlayerSerialized) {
 		super.fromJSON(data);
+		this.money = data.money;
 		return this;
 	}
 
