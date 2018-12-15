@@ -23,7 +23,7 @@ export class MenuState extends Phaser.State {
 		for (const text of this.texts) text.destroy(true);
 		this.texts.length = 0;
 		this.logo.destroy(true);
-		return super.shutdown();
+		super.shutdown();
 	}
 
 	private createButton(name: string, cb: Function) {
