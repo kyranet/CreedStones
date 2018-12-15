@@ -38,7 +38,6 @@
 		"no-boolean-literal-compare": true,
 		"no-consecutive-blank-lines": true,
 		"no-construct": true,
-		"no-console": true,
 		"no-debugger": true,
 		"no-duplicate-imports": true,
 		"no-duplicate-super": true,

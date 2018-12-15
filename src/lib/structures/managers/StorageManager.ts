@@ -17,8 +17,9 @@ export class StorageManager {
 		this.gameManager.clear();
 
 		// Load the data
-		const level = Number(localStorage.getItem('level'));
-		if (Number.isNaN(level)) throw new Error(`Could not find a saved file.`);
+		const rawLevel = localStorage.getItem('level');
+		if (rawLevel === null) throw new Error(`Could not find a saved file.`);
+		const level = Number(rawLevel);
 
 		this.gameManager.level = level;
 
