@@ -1,10 +1,9 @@
-import { Game } from 'phaser';
 import { BootState } from './states/BootState';
 import { PlayState } from './states/PlayState';
 import { PreloaderState } from './states/PreloaderState';
 
 window.onload = function onload() {
-	const game = new Game(800, 600, Phaser.AUTO, 'game');
+	const game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
 
 	game.state.add('boot', BootState);
 	game.state.add('preloader', PreloaderState);

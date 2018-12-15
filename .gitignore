@@ -3,7 +3,6 @@ node_modules/
 .vs/
 
 # Ignore bwd folders
-dist/
 build/
 
 # Ignore the config file (contains sensitive information such as tokens)

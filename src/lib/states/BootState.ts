@@ -1,6 +1,5 @@
-import { State } from 'phaser';
 
-export class BootState extends State {
+export class BootState extends Phaser.State {
 	public preload() {
 		// load here assets required for the loading screen
 		this.game.load.image('preloader_bar', 'images/preloader_bar.png');

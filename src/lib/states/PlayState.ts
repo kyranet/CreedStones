@@ -1,6 +1,4 @@
-import { State } from 'phaser';
-
-export class PlayState extends State {
+export class PlayState extends Phaser.State {
 	public create() {
 		const logo = this.game.add.sprite(
 			this.game.world.centerX, this.game.world.centerY, 'logo');

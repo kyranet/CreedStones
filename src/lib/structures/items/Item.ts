@@ -1,11 +1,10 @@
-import { Game } from 'phaser';
 import { ItemFactory } from './ItemFactory';
 
 export class Item {
 
 	public type = 'item';
 
-	public constructor(public game: Game, public name: string) { }
+	public constructor(public game: Phaser.Game, public name: string) { }
 
 	public setName(name: string) {
 		this.name = name;

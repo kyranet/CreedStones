@@ -1,10 +1,9 @@
-import { Game, Tilemap } from 'phaser';
 import { chunk } from '../../util/util';
 
 export class MapManager {
 	private readonly map: number[] = [];
 
-	public constructor(public game: Game, private sizeX: number, private sizeY: number, map?: number[]) {
+	public constructor(public game: Phaser.Game, private sizeX: number, private sizeY: number, map?: number[]) {
 		// If a preset was given, load from this instead of setting all to zero
 		if (map) this.load(this.sizeX, this.sizeY, map);
 		else this.reset();
@@ -49,7 +48,7 @@ export class MapManager {
 	public generate(tileSize: MapTileSize) {
 		let data = '';
 		for (const body of chunk(this.map, this.sizeX)) data += `${body.join(',')}\n`;
-		this.game.cache.addTilemap('mapTilemap', null, data, Tilemap.CSV);
+		this.game.cache.addTilemap('mapTilemap', null, data, Phaser.Tilemap.CSV);
 		const map = this.game.add.tilemap('mapTilemap', tileSize.width, tileSize.heigth, this.sizeX, this.sizeY);
 		map.addTilesetImage('mapTiles', 'mapTiles', tileSize.width, tileSize.heigth);
 		map.createLayer(0);

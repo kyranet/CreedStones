@@ -1,4 +1,3 @@
-import { Game } from 'phaser';
 import { Player } from '../gameObjects/characters/Player';
 import { GameObject } from '../gameObjects/GameObject';
 import { MapManager } from './MapManager';
@@ -11,7 +10,7 @@ export class GameManager {
 	public player: Player = null;
 	public level = GameLevels.First;
 
-	public constructor(public game: Game) {}
+	public constructor(public game: Phaser.Game) {}
 
 	public clear() {
 		for (const gameObject of this.gameObjects) gameObject.destroy(true);

@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "description": "Browser videogame built with Phaser and TypeScript",
   "scripts": {
-    "compile": "tsc -p .",
+    "bundle": "npx webpack --config webpack.config.js",
     "lint": "tslint -p tsconfig.json src/lib/**/*.ts --fix",
+    "server": "node scripts/server.js",
     "start": "node dist/src/Skyra.js",
     "test": "tslint -p tsconfig.json src/lib/**/*.ts",
     "update": "yarn",
-    "server": "node scripts/server.js",
-    "watch": "tsc -p . -w",
+    "watch": "node scripts/watch.js",
     "watch-server": "node scripts/watch-server.js"
   },
   "repository": {
@@ -21,8 +21,11 @@
   },
   "devDependencies": {
     "@types/node": "^10.12.15",
+    "ts-loader": "^5.3.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
   },
   "private": true,
   "keywords": [

@@ -1,8 +1,7 @@
-import { Sprite } from 'phaser';
 import { GameManager } from '../managers/GameManager';
 import { GameObjectFactory } from './GameObjectFactory';
 
-export class GameObject extends Sprite {
+export class GameObject extends Phaser.Sprite {
 
 	public constructor(public gameManager: GameManager, x: number, y: number, key?: string, frame?: string) {
 		super(gameManager.game, x, y, key, frame);

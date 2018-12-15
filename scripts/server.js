@@ -12,7 +12,7 @@ const contentTypes = new Map()
 	.set('.wav', 'audio/wav');
 
 createServer((request, response) => {
-	const filePath = request.url === '/' ? './static/index.html' : `./static${request.url}`;
+	const filePath = request.url === '/' ? './dist/index.html' : `./dist${request.url}`;
 	const contentType = contentTypes.get(extname(filePath)) || 'text/html';
 	try {
 		const stream = createReadStream(filePath);

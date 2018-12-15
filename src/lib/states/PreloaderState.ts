@@ -1,8 +1,6 @@
-import { Sprite, State } from 'phaser';
+export class PreloaderState extends Phaser.State {
 
-export class PreloaderState extends State {
-
-	private loadingBar: Sprite;
+	private loadingBar: Phaser.Sprite;
 
 	public preload() {
 		this.loadingBar = this.game.add.sprite(0, 240, 'preloader_bar');
