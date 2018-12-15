@@ -12,4 +12,10 @@ export class GameManager {
 		this.player = new Player(this, 0, 0);
 	}
 
+	public clear() {
+		for (const gameObject of this.gameObjects) gameObject.destroy(true);
+		this.gameObjects.length = 0;
+		return this;
+	}
+
 }
