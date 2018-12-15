@@ -77,6 +77,9 @@ export class GameObject extends Sprite {
 
 }
 
+/**
+ * The serialized game object data
+ */
 export interface IGameObjectSerialized {
 	frame: string;
 	key: string;

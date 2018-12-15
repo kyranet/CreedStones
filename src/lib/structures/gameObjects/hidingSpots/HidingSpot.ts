@@ -31,6 +31,9 @@ export class HidingSpot extends GameObject {
 
 }
 
+/**
+ * The serialized hiding spot data
+ */
 export interface IHidingSpotSerialized extends IGameObjectSerialized {
 	hidingType: number;
 }

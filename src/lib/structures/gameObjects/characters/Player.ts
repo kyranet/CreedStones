@@ -50,6 +50,9 @@ export class Player extends Character {
 
 }
 
+/**
+ * The serialized player data
+ */
 export interface IPlayerSerialized extends ICharacterSerialized {
 	hidingSpot: IHidingSpotSerialized;
 	money: number;

@@ -25,7 +25,7 @@
 		"array-type": false,
 		"arrow-return-shorthand": true,
 		"class-name": true,
-		"completed-docs": [true, "enums", "enum-members", "interfaces", "types"],
+		"completed-docs": [true, "enums", "interfaces", "types"],
 		"eofline": true,
 		"import-spacing": true,
 		"indent": true,
@@ -92,7 +92,6 @@
 		"triple-equals": true,
 		"type-literal-delimiter": true,
 		"unified-signatures": true,
-		"object-curly-spacing": true,
 		"use-isnan": true,
 		"variable-name": [true, "allow-leading-underscore", "ban-keywords"],
 		"whitespace": [

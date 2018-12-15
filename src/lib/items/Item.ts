@@ -36,6 +36,9 @@ export class Item {
 
 Item.factory.set('item', Item);
 
+/**
+ * The serialized item data
+ */
 export interface IItemSerialized {
 	name: string;
 	type: string;

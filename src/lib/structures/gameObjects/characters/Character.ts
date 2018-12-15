@@ -1,7 +1,7 @@
 import { Item } from '../../../items/Item';
 import { ItemWeapon } from '../../../items/ItemWeapon';
 import { GameObject, IGameObjectSerialized } from '../../common/GameObject';
-import { IInventarySerialized, Inventary } from '../../common/Inventary';
+import { IInventorySerialized, Inventory } from '../../common/Inventory';
 import { CharacterState, Direction } from '../../common/types';
 import { GameManager } from '../../managers/GameManager';
 
@@ -10,7 +10,7 @@ export class Character extends GameObject {
 	public runSpeed = 0;
 	public state: number = CharacterState.stand;
 	public direction = Direction.down;
-	public inventary = new Inventary();
+	public inventary = new Inventory();
 	public strength = 0;
 
 	public constructor(gameManager: GameManager, x: number, y: number, key?: string, frame?: string) {
@@ -116,9 +116,12 @@ export class Character extends GameObject {
 
 }
 
+/**
+ * The serialized character data
+ */
 export interface ICharacterSerialized extends IGameObjectSerialized {
 	direction: number;
-	inventary: IInventarySerialized;
+	inventary: IInventorySerialized;
 	runSpeed: number;
 	strength: number;
 	walkSpeed: number;

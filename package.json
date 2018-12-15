@@ -4,9 +4,9 @@
   "description": "Browser videogame built with gulp, browserify, and phaser.js",
   "scripts": {
     "compile": "tsc -p .",
-    "lint": "tslint -p tsconfig.json src/**/*.ts --fix",
+    "lint": "tslint -p tsconfig.json src/lib/**/*.ts --fix",
     "start": "node dist/src/Skyra.js",
-    "test": "tslint -p tsconfig.json src/**/*.ts",
+    "test": "tslint -p tsconfig.json src/lib/**/*.ts",
     "update": "yarn",
     "watch": "tsc -p . -w"
   },

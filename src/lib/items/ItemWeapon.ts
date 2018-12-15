@@ -34,6 +34,9 @@ export class ItemWeapon extends Item {
 
 Item.factory.set('weapon', ItemWeapon);
 
+/**
+ * The serialized item weapon data
+ */
 export interface IItemWeaponSerialized extends IItemSerialized {
 	damage: number;
 }

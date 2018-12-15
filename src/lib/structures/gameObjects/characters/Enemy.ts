@@ -51,6 +51,9 @@ export class Enemy extends Character {
 
 }
 
+/**
+ * The serialized enemy data
+ */
 export interface IEnemySerialized extends ICharacterSerialized {
 	isTarget: boolean;
 	pov: number;

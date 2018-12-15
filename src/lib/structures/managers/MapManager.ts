@@ -2,7 +2,7 @@ import { Game, Tilemap } from 'phaser';
 import { chunk } from '../../util/util';
 
 export class MapManager {
-	private map: number[] = [];
+	private readonly map: number[] = [];
 
 	public constructor(public game: Game, private sizeX: number, private sizeY: number, map?: number[]) {
 		// If a preset was given, load from this instead of setting all to zero
@@ -57,6 +57,9 @@ export class MapManager {
 
 }
 
+/**
+ * The map tile sizes
+ */
 export interface MapTileSize {
 	width: number;
 	heigth: number;

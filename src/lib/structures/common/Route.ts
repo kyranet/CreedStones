@@ -1,3 +1,6 @@
+/**
+ * The array route data
+ */
 export interface ArrayRoute extends Array<[number, number]> { }
 
 export class Route {

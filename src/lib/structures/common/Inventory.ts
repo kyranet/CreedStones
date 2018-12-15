@@ -1,11 +1,11 @@
 import { IItemSerialized, Item } from '../../items/Item';
 
-export class Inventary extends Map<string, Item> {
+export class Inventory extends Map<string, Item> {
 
 	public active: Item;
 
 	/**
-	 * Set the active item from the inventary
+	 * Set the active item from the inventory
 	 * @param item The new active item
 	 */
 	public setActive(item: Item) {
@@ -13,7 +13,7 @@ export class Inventary extends Map<string, Item> {
 		return this;
 	}
 
-	public toJSON(): IInventarySerialized {
+	public toJSON(): IInventorySerialized {
 		return {
 			active: this.active.name,
 			items: [...this.values()]
@@ -22,7 +22,10 @@ export class Inventary extends Map<string, Item> {
 
 }
 
-export interface IInventarySerialized {
+/**
+ * The serialized inventory data
+ */
+export interface IInventorySerialized {
 	active: string;
 	items: IItemSerialized[];
 }

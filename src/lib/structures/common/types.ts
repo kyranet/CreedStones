@@ -1,3 +1,6 @@
+/**
+ * The directions
+ */
 export enum Direction {
 	up,
 	down,
@@ -5,11 +8,17 @@ export enum Direction {
 	left
 }
 
+/**
+ * The boulder states
+ */
 export enum BoulderState {
 	stop,
 	move
 }
 
+/**
+ * The hiding types
+ */
 export enum HidingType {
 	none,
 	bushes,
@@ -35,6 +44,9 @@ export const EnemyState: IEnemyState = {
 	pursuit: 5
 };
 
+/**
+ * The character states
+ */
 interface ICharacterState {
 	dead: 0;
 	run: 1;
@@ -42,10 +54,16 @@ interface ICharacterState {
 	walk: 3;
 }
 
+/**
+ * The player states
+ */
 interface IPlayerState extends ICharacterState {
 	hidden: 4;
 }
 
+/**
+ * The enemy states
+ */
 interface IEnemyState extends ICharacterState {
 	onRoute: 4;
 	pursuit: 5;
