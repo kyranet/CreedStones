@@ -1,9 +1,18 @@
-node_modules
+# Ignore a blackhole and the folder for development
+node_modules/
+.vs/
 
-.publish
-.tmp
-dist
-gulp.config.json
-package-lock.json
+# Ignore bwd folders
+dist/
+build/
+
+# Ignore the config file (contains sensitive information such as tokens)
+config.ts
+
+# Ignore heapsnapshot and log files
+*.heapsnapshot
+*.log
+
+# Ignore package locks
 yarn.lock
-build
+package-lock.json

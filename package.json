@@ -3,52 +3,35 @@
   "version": "0.0.1",
   "description": "Browser videogame built with gulp, browserify, and phaser.js",
   "scripts": {
-    "test": "eslint src",
-    "lint": "eslint src --fix",
-    "cleanBuild": "npx gulp cleanBuild",
-    "copyStatic": "npx gulp copyStatic",
-    "copyPhaser": "npx gulp copyPhaser",
-    "build": "npx gulp build",
-    "fastBuild": "npx gulp fastBuild",
-    "serve": "npx gulp serve",
-    "watch-js": "npx gulp watch-js",
-    "watch-static": "npx gulp watch-static",
-    "run": "npx gulp run"
+    "compile": "tsc -p .",
+    "lint": "tslint -p tsconfig.json src/**/*.ts --fix",
+    "start": "node dist/src/Skyra.js",
+    "test": "tslint -p tsconfig.json src/**/*.ts",
+    "update": "yarn",
+    "watch": "tsc -p . -w"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kyranet/CreedStones.git"
   },
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "8",
-    "browser-sync": "^2.26.3",
-    "browserify": "^16.2.3",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-buffer": "^0.0.2",
-    "gulp-uglify": "^3.0.1",
-    "gulp-util": "^3.0.8",
-    "phaser": "2.6.0",
-    "vinyl-source-stream": "^2.0.0",
-    "yargs": "^12.0.5"
+    "phaser": "2.6.0"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "http-server": "^0.11.1"
+    "typescript": "^3.2.2"
   },
+  "private": true,
   "keywords": [
     "phaser",
     "videogame",
     "browser"
   ],
   "contributors": [
-    "kyraNET",
+    "kyraNET <kyradiscord@gmail.com>",
     "CarlosMGM"
   ],
-  "author": "kyranet",
-  "license": "CC-BY-NC-SA-4.0",
+  "author": "kyranet <kyradiscord@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kyranet/CreedStones/issues"
   },
