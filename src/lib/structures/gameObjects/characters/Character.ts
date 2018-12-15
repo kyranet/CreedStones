@@ -1,8 +1,8 @@
 import { IInventorySerialized, Inventory } from '../../common/Inventory';
-import { CharacterState, Direction } from '../../common/types';
 import { Item } from '../../items/Item';
 import { ItemWeapon } from '../../items/ItemWeapon';
 import { GameManager } from '../../managers/GameManager';
+import { CharacterState, Direction } from '../../misc/types';
 import { GameObject, IGameObjectSerialized } from '../GameObject';
 
 export class Character extends GameObject {

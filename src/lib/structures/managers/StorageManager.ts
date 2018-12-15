@@ -9,6 +9,7 @@ export class StorageManager {
 	public save() {
 		localStorage.clear();
 		localStorage.setItem('gameObjects', JSON.stringify(this.gameManager.gameObjects));
+		localStorage.setItem('level', this.gameManager.level.toString());
 	}
 
 	public load() {
@@ -16,8 +17,12 @@ export class StorageManager {
 		this.gameManager.clear();
 
 		// Load the data
-		const gameObjects = JSON.parse(localStorage.getItem('gameObjects')) as IGameObjectSerialized[];
+		const level = Number(localStorage.getItem('level'));
+		if (Number.isNaN(level)) throw new Error(`Could not find a saved file.`);
 
+		this.gameManager.level = level;
+
+		const gameObjects = JSON.parse(localStorage.getItem('gameObjects')) as IGameObjectSerialized[];
 		if (gameObjects) {
 			for (const gameObject of gameObjects) {
 				const Ctor = GameObject.factory.get(gameObject.type);

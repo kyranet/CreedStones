@@ -1,5 +1,5 @@
-import { BoulderState, Direction } from '../../common/types';
 import { GameManager } from '../../managers/GameManager';
+import { BoulderState, Direction } from '../../misc/types';
 import { Trap } from './Trap';
 
 export class Boulder extends Trap {

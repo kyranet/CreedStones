@@ -1,6 +1,6 @@
-import { Route } from '../../common/Route';
-import { EnemyState } from '../../common/types';
 import { GameManager } from '../../managers/GameManager';
+import { Route } from '../../misc/Route';
+import { EnemyState } from '../../misc/types';
 import { Character, ICharacterSerialized } from './Character';
 
 export class Enemy extends Character {

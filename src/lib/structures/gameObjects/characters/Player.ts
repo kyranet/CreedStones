@@ -1,5 +1,5 @@
-import { HidingType, PlayerState } from '../../common/types';
 import { GameManager } from '../../managers/GameManager';
+import { HidingType, PlayerState } from '../../misc/types';
 import { HidingSpot, IHidingSpotSerialized } from '../hidingSpots/HidingSpot';
 import { Character, ICharacterSerialized } from './Character';
 

@@ -1,5 +1,5 @@
-import { HidingType } from '../../common/types';
 import { GameManager } from '../../managers/GameManager';
+import { HidingType } from '../../misc/types';
 import { GameObject, IGameObjectSerialized } from '../GameObject';
 
 export class HidingSpot extends GameObject {

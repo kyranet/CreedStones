@@ -2,15 +2,16 @@ import { Game } from 'phaser';
 import { Player } from '../gameObjects/characters/Player';
 import { GameObject } from '../gameObjects/GameObject';
 import { MapManager } from './MapManager';
+import { StorageManager } from './StorageManager';
 
 export class GameManager {
-	public map: MapManager = null;
-	public player: Player = null;
+	public mapManager: MapManager = null;
+	public storageManager = new StorageManager(this);
 	public gameObjects: GameObject[] = [];
+	public player: Player = null;
+	public level = GameLevels.First;
 
-	public constructor(public game: Game) {
-		this.player = new Player(this, 0, 0);
-	}
+	public constructor(public game: Game) {}
 
 	public clear() {
 		for (const gameObject of this.gameObjects) gameObject.destroy(true);
@@ -18,4 +19,11 @@ export class GameManager {
 		return this;
 	}
 
+}
+
+/**
+ * The game's levels
+ */
+export enum GameLevels {
+	First
 }
