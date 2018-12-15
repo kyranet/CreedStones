@@ -20,7 +20,8 @@ export function readLine(game: Phaser.Game, coordinates: Coordinates, cb: (text:
 		if (event.key === 'Enter') {
 			document.removeEventListener('keydown', listener);
 			bmd.destroy();
-			return cb(text.join(''));
+			cb(text.join(''));
+			return;
 		}
 
 		if (event.key === 'Backspace') {
@@ -38,6 +39,9 @@ export function readLine(game: Phaser.Game, coordinates: Coordinates, cb: (text:
 	document.addEventListener('keydown', listener);
 }
 
+/**
+ * The coordinates interface
+ */
 export interface Coordinates {
 	x: number;
 	y: number;

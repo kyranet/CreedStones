@@ -7,7 +7,7 @@ export class Player extends Character {
 
 	public hidingSpot: HidingSpot = null;
 	public money = 0;
-	private directions = {
+	private readonly directions = {
 		down: false,
 		left: false,
 		right: false,
@@ -28,10 +28,12 @@ export class Player extends Character {
 
 		if (this.directions.down !== this.directions.up) {
 			this.direction = this.directions.down ? Direction.down : Direction.up;
-			running ? this.run() : this.walk();
+			if (running) this.run();
+			else this.walk();
 		} else if (this.directions.left !== this.directions.right) {
 			this.direction = this.directions.left ? Direction.left : Direction.right;
-			running ? this.run() : this.walk();
+			if (running) this.run();
+			else this.walk();
 		} else {
 			this.stand();
 		}
