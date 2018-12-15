@@ -1,4 +1,4 @@
-# Stone's Creed <img src="src/images/StonesCreed.png" align="right" width="30%">
+# Stone's Creed <img src="https://github.com/kyranet/CreedStones/blob/master/static/images/StonesCreed.png?raw=true" align="right" width="30%">
 
 Awesome game by
 [kyranet](https://github.com/kyranet) and [CarlosMGM](https://github.com/CarlosMGM).
@@ -13,39 +13,13 @@ Clone this repository and install dependencies:
 ```
 git clone kyranet/CreedStones
 cd CreedStones
-npm install
+yarn
 ```
 
-To **build** the game, run the `build` task from the project root:
+To **build** the game, run the `compile` script from the project root:
 
 ```
-npx gulp build
+yarn compile
 ```
 
-The `dist` folder will contain a build of the game. You can then start a local server that serves this directory statically to play the game in local:
-
-```
-npx http-server build
-```
-
-You can **clean up** the temporary files and the `build` folder by running:
-
-```
-npx gulp cleanBuild
-```
-
-## Development
-
-This project uses [Browserify](http://browserify.org) to handle JavaScript modules.
-
-There is a task that will automatically run Browserify when a JavaScript file changes, and it will also reload the browser.
-
-```
-npx gulp run
-```
-
-You can deploy to **Github Pages** with the `deploy:ghpages` task, which will build the project and then push the `dist` folder in the `gh-pages` branch.
-
-```
-npx gulp deploy:ghpages
-```
+The `dist` folder will contain a build of the game.

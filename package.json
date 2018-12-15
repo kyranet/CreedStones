@@ -1,7 +1,7 @@
 {
   "name": "creedstones",
   "version": "0.0.1",
-  "description": "Browser videogame built with gulp, browserify, and phaser.js",
+  "description": "Browser videogame built with Phaser and TypeScript",
   "scripts": {
     "compile": "tsc -p .",
     "lint": "tslint -p tsconfig.json src/lib/**/*.ts --fix",
