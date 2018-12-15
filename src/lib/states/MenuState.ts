@@ -1,3 +1,5 @@
+import { PlayState } from './PlayState';
+
 export class MenuState extends Phaser.State {
 
 	public texts: Phaser.Text[] = [];
@@ -9,11 +11,12 @@ export class MenuState extends Phaser.State {
 		this.logo.anchor.setTo(0.5, 0.5);
 		this.logo.scale.setTo(0.5, 0.5);
 
-		this.createButton(() => this.game.state.start('play'));
+		this.createButton('New Game', () => this.game.state.start('play'));
+		if (localStorage.getItem('level')) this.createButton('Continue', () => (this.game.state.states.play as PlayState).gameManager.storageManager.load());
 	}
 
-	private createButton(cb: Function) {
-		const text = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'Play', { font: '65px Arial', fill: '#CDCDCD', align: 'center' });
+	private createButton(name: string, cb: Function) {
+		const text = this.game.add.text(this.game.world.centerX, this.game.world.centerY, name, { font: '65px Arial', fill: '#CDCDCD', align: 'center' });
 		text.anchor.set(0.5);
 		text.inputEnabled = true;
 		text.events.onInputUp.add(cb, this);
