@@ -19,6 +19,13 @@ export class MenuState extends Phaser.State {
 		});
 	}
 
+	public shutdown() {
+		for (const text of this.texts) text.destroy(true);
+		this.texts.length = 0;
+		this.logo.destroy(true);
+		return super.shutdown();
+	}
+
 	private createButton(name: string, cb: Function) {
 		const text = this.game.add.text(this.game.world.centerX, this.game.world.centerY, name, { font: '65px Arial', fill: '#CDCDCD', align: 'center' });
 		text.anchor.set(0.5);
