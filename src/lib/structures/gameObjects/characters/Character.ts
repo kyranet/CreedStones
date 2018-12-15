@@ -10,7 +10,7 @@ export class Character extends GameObject {
 	public runSpeed = 0;
 	public state: number = CharacterState.stand;
 	public direction = Direction.down;
-	public inventary = new Inventory();
+	public inventory = new Inventory();
 	public strength = 0;
 
 	public constructor(gameManager: GameManager, x: number, y: number, key?: string, frame?: string) {
@@ -19,7 +19,7 @@ export class Character extends GameObject {
 	}
 
 	public get damageStrength() {
-		const item = this.inventary.active;
+		const item = this.inventory.active;
 		return item instanceof ItemWeapon ? item.damage : this.strength;
 	}
 
@@ -96,9 +96,9 @@ export class Character extends GameObject {
 		this.direction = data.direction;
 		this.runSpeed = data.runSpeed;
 		this.walkSpeed = data.walkSpeed;
-		this.inventary.clear();
-		this.inventary.active = new Item(this.game, data.inventary.active);
-		for (const entry of data.inventary.items) this.inventary.set(entry.name, new Item(this.game, entry.name));
+		this.inventory.clear();
+		this.inventory.active = new Item(this.game, data.inventory.active);
+		for (const entry of data.inventory.items) this.inventory.set(entry.name, new Item(this.game, entry.name));
 		this.setStrength(data.strength);
 		return this;
 	}
@@ -107,7 +107,7 @@ export class Character extends GameObject {
 		return {
 			...super.toJSON(),
 			direction: this.direction,
-			inventary: this.inventary.toJSON(),
+			inventory: this.inventory.toJSON(),
 			runSpeed: this.runSpeed,
 			strength: this.strength,
 			walkSpeed: this.walkSpeed,
@@ -123,7 +123,7 @@ Character.factory.add(Character);
  */
 export interface ICharacterSerialized extends IGameObjectSerialized {
 	direction: number;
-	inventary: IInventorySerialized;
+	inventory: IInventorySerialized;
 	runSpeed: number;
 	strength: number;
 	walkSpeed: number;
