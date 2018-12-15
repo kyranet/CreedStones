@@ -11,7 +11,7 @@
         "declaration": true,
         "noUnusedLocals": true,
         "removeComments": true,
-        "target": "esnext"
+        "target": "es2016"
 	},
 	"exclude": [
 		"node_modules",
