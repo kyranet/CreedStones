@@ -1,5 +1,3 @@
-import { WIN_HEIGHT, WIN_WIDTH } from './constants';
-
 export function chunk<T>(entries: T[], chunkSize: number): T[][] {
 	const clone = entries.slice();
 	const chunks = [];
@@ -7,42 +5,33 @@ export function chunk<T>(entries: T[], chunkSize: number): T[][] {
 	return chunks;
 }
 
-export function readLine(game: Phaser.Game, coordinates: Coordinates, cb: (text: string) => void) {
-	const bmd = game.make.bitmapData(WIN_WIDTH, WIN_HEIGHT);
-	bmd.context.font = '64px Arial';
-	bmd.context.fillStyle = '#FFFFFF';
-	bmd.context.textAlign = 'center';
-	bmd.addToWorld();
-
-	const text = [];
+export function readLine(text: Phaser.Text, cb: (text: string) => void, options?: PhaserReadLineOptions) {
+	const content = [];
+	const maximum = 'maximumLength' in options ? options.maximumLength : 100;
 
 	const listener = (event: KeyboardEvent) => {
 		if (event.key === 'Enter') {
 			document.removeEventListener('keydown', listener);
-			bmd.destroy();
-			cb(text.join(''));
+			cb(content.join(''));
 			return;
 		}
 
 		if (event.key === 'Backspace') {
-			if (text.length) text.pop();
-		} else if (/^[a-zA-Z0-9]$/.test(event.key)) {
-			text.push(event.key);
+			if (content.length) content.pop();
+		} else if (content.length <= maximum && /^[\(\)\[\]\w\d\-!?¡¿ ]$/.test(event.key)) {
+			content.push(event.key);
 		} else {
 			return;
 		}
 
-		// Clear the bitmap data
-		bmd.cls();
-		bmd.context.fillText(text.join(''), coordinates.x, coordinates.y);
+		text.text = content.join('');
 	};
 	document.addEventListener('keydown', listener);
 }
 
 /**
- * The coordinates interface
+ * The readline options
  */
-export interface Coordinates {
-	x: number;
-	y: number;
+export interface PhaserReadLineOptions {
+	maximumLength?: number;
 }

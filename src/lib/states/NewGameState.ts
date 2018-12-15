@@ -4,14 +4,21 @@ import { PlayState } from './PlayState';
 export class NewGameState extends Phaser.State {
 
 	public create() {
-		const text = this.game.add.text(this.game.world.centerX, this.game.world.centerY - 100, 'Insert your name',
+		const titleText = this.game.add.text(this.game.world.centerX, this.game.world.centerY - 65, 'Insert your name',
 			{ font: '65px Arial', fill: '#CDCDCD', align: 'center' });
-		text.anchor.set(0.5);
-		readLine(this.game, { x: this.game.world.centerX, y: this.game.world.centerY }, (name) => {
+		titleText.anchor.setTo(0.5, 0.5);
+
+		const inputText = this.game.add.text(this.game.world.centerX, this.game.world.centerY, '',
+			{ font: '65px Arial', fill: '#CDCDCD', align: 'center' });
+		inputText.anchor.setTo(0.5, 0.5);
+		inputText.alignTo(titleText, Phaser.BOTTOM_CENTER, 0, 25);
+
+		readLine(inputText, (name) => {
 			(this.game.state.states.play as PlayState).gameManager.playerName = name;
-			text.destroy(true);
+			titleText.destroy(true);
+			inputText.destroy(true);
 			this.game.state.start('play');
-		});
+		}, { maximumLength: 20 });
 	}
 
 }
