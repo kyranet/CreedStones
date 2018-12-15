@@ -8,10 +8,10 @@ export class PreloaderState extends Phaser.State {
 		this.load.setPreloadSprite(this.loadingBar);
 
 		// TODO: load here the assets for the game
-		this.game.load.image('logo', 'images/phaser.png');
+		this.game.load.image('logo', 'images/StonesCreed.png');
 	}
 
 	public create() {
-		this.game.state.start('play');
+		this.game.state.start('menu');
 	}
 }
