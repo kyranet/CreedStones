@@ -16,7 +16,7 @@
     "url": "git+https://github.com/kyranet/StonesCreed.git"
   },
   "devDependencies": {
-    "@types/node": "^11.11.5",
+    "@types/node": "^11.11.6",
     "copy-webpack-plugin": "^5.0.2",
     "ts-loader": "^5.3.3",
     "tslint": "^5.14.0",
