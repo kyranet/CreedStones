@@ -20,7 +20,7 @@
     "copy-webpack-plugin": "^5.0.2",
     "ts-loader": "^5.3.3",
     "tslint": "^5.15.0",
-    "typescript": "^3.4.1",
+    "typescript": "^3.4.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
